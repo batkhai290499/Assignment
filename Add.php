@@ -23,7 +23,7 @@
 
         $sql = "INSERT INTO product (id, name, price, content) VALUES (?,?,?,?)";
         $stmt= $pdo->prepare($sql);
-        $stmt->execute([$id, $productname, $price, $content])
+        $stmt->execute([$id, $name, $price, $content])
 
     ?>
 
