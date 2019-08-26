@@ -1,30 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Log in</title>
-    <link rel="stylesheet" href="style.css">
+	<title>Table V01</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
-<div class="trang">
-    <div class="dau"></div>
-    <div class="than">
-    <div id="user_login" class="box-content">
-                <h1>Admin Login</h1>
-                <form action="./index.php" method="Post" autocomplete="off">
-                    <label>Username</label></br>
-                    <input type="text" name="username" value="" /><br/>
-                    <label>Password</label></br>
-                    <input type="password" name="password" value="" /></br>
-                    <br>
-                    <button><a href="productmanage.php">Login</a></button>
-                </form>
-            </div>
-    </div>
-    <div class="cuoi"></div>
-</div>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Date</th>
+								<th class="column2">Order ID</th>
+								<th class="column3">Name</th>
+								<th class="column4">Price</th>
+								<th class="column5">Quantity</th>
+								<th class="column6">Total</th>
+							</tr>
+						</thead>
+						<?php  
+						require_once './database.php';
+							foreach ($resultSet as $row) {
+								?>
+								<div class="product-prop product-name"><?= $row['productname'] ?></div>
+								<div class="product-prop product-name"><?= $row['price'] ?></div>
+								<div class="product-prop product-name"><?= $row['content'] ?></div>
+								<div class="product-prop product-button">
+									<a href="./product_delete.php?id=<?= $row['id'] ?>">Delete</a>
+								</div>
+		
+								<div class="product-prop product-button">
+									<a href="./editing.php?id=<?= $row['id'] ?>">Edit</a>
+								</div>
+		
+								<div class="product-prop product-button">
+									<a href="./product_editing.php?id=<?= $row['id'] ?>&task=copy">Copy</a>
+								</div>
+								<div class="clear-both"></div>  
+							<?php } ?>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
 
 </body>
 </html>
