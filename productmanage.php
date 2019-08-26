@@ -60,12 +60,12 @@
 						<thead>
                         <ul>
                             <tr class="table100-head">
-								<th class="column1">Date</th>
-								<th class="column2">Order ID</th>
-								<th class="column3">Name</th>
-								<th class="column4">Price</th>
-								<th class="column5">Quantity</th>
-								<th class="column6">Total</th>
+								<th class="column1">Name</th>
+								<th class="column2">Price</th>
+								<th class="column3">Content</th>
+								<th class="column4">Delete</th>
+								<th class="column5">Edit</th>
+								<th class="column6">Copy</th>
 							</tr>
                             <?php  
                 require_once './database.php';
